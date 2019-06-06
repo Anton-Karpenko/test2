@@ -25,6 +25,7 @@ urlpatterns = [
     re_path(r"^redoc/$", schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
     path(settings.ADMIN_URL, admin.site.urls),
+    path("menu-items/", include('apps.menu_items.urls', namespace='menu_items')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
