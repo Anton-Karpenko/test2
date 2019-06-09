@@ -11,8 +11,13 @@ SECRET_KEY = env(
     default="peUqleTwV2aGjbSks6p6mpSc0d0pyTW98meCseHp9lxqW0J0OxOJ5vUJAi4HZui1",
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
+ALLOWED_HOSTS = '*'
+CORS_ALLOW_CREDENTIALS = True
+CSRF_COOKIE_NAME = "csrftoken"
 
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
 # CACHES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#caches
