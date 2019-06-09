@@ -5,5 +5,5 @@ pytestmark = pytest.mark.django_db
 
 
 def test_list():
-    assert reverse("menu_items:list") == "/menu-items/"
-    assert resolve("/menu-items/").view_name == "menu_items:list"
+    assert reverse("menu_items:list") == "/api/menu-items/"
+    assert resolve("/api/menu-items/").view_name == "menu_items:list"
