@@ -1,5 +1,6 @@
 from django.utils.decorators import method_decorator
 from drf_yasg.utils import swagger_auto_schema
+from rest_framework import filters
 from rest_framework import generics
 
 from apps.menu_items.api import docs
@@ -11,3 +12,5 @@ from .serializers import MenuItemSerializer
 class ListMenuItemsAPIView(generics.ListAPIView):
     serializer_class = MenuItemSerializer
     queryset = MenuItem.objects.all()
+    search_fields = 'name',
+    filter_backends = filters.SearchFilter,
